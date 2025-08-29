@@ -17,28 +17,80 @@ The setup includes a **VPC, public subnets, EC2 instances, and Amazon S3** integ
 - **VPC**
   - CIDR blocks: `172.16.0.0/16`
   - Subnets: `172.16.0.0`, `172.16.1.0`, `172.16.2.0`
-- **Public Subnets**
-  - For hosting EC2 instances
-- **EC2 Instances**
-  - Deployed in multiple subnets for high availability
-- **Internet Gateway & Route Table**
-  - Provides internet access to public subnets
-- **Amazon S3**
-  - Storage integration for application data
+
+📸 **Screenshot:**  
+![]()
 
 ---
 
-## ⚙️ Prerequisites
+### 2️⃣ Public Subnets
+- Used to host EC2 instances.
+- Each subnet belongs to a different Availability Zone for high availability.
 
-- [Terraform](https://developer.hashicorp.com/terraform/downloads) installed
-- AWS account and IAM credentials with appropriate permissions
-- AWS CLI configured (`aws configure`)
+📸 **Screenshot:**  
+![](./images/public-subnets.png)
 
 ---
 
-## 🚀 How to Use
+### 3️⃣ EC2 Instances
+- Deployed in **multiple subnets** to ensure redundancy.
+- Configured with security groups and key pairs.
 
-1. **Clone this repository**
+📸 **Screenshot:**  
+![](./images/ec2.png)
+
+---
+
+### 4️⃣ Internet Gateway & Route Table
+- Internet Gateway provides internet access.
+- Route Table maps traffic from subnets to the Internet Gateway.
+
+📸 **Screenshot:**  
+![](./images/igw-route.png)
+
+---
+
+### 5️⃣ Amazon S3
+- Used for storing application data.
+- Can be used as backend for Terraform state as well.
+
+📸 **Screenshot:**  
+![](./images/s3.png)
+
+---
+
+
+## Deployment Steps
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/aws-terraform-infra.git
+cd aws-terraform-infra
+```
+# Initialize Terraform
+```
+terraform init
+```
+# Validate config
+```
+terraform validate
+```
+# Plan the infra
+```
+terraform plan
+```
+# Apply
+```
+terraform apply -auto-approve
+```
+# Destroy when not needed
+```
+terraform destroy -auto-approve
+```
+---
+## How to Use
+
+**Clone this repository**
    ```bash
    git clone https://github.com/your-username/aws-terraform-infra.git
    cd aws-terraform-infra
