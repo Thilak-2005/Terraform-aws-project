@@ -19,7 +19,7 @@ The setup includes a **VPC, public subnets, EC2 instances, and Amazon S3** integ
   - Subnets: `172.16.0.0`, `172.16.1.0`, `172.16.2.0`
 
 📸 **Screenshot:**  
-![]()
+![](vpc.png)
 
 ---
 
@@ -37,7 +37,7 @@ The setup includes a **VPC, public subnets, EC2 instances, and Amazon S3** integ
 - Configured with security groups and key pairs.
 
 📸 **Screenshot:**  
-![](./images/ec2.png)
+![](ec21.png)
 
 ---
 
@@ -46,7 +46,7 @@ The setup includes a **VPC, public subnets, EC2 instances, and Amazon S3** integ
 - Route Table maps traffic from subnets to the Internet Gateway.
 
 📸 **Screenshot:**  
-![](./images/igw-route.png)
+![](gateway.png)
 
 ---
 
@@ -55,7 +55,7 @@ The setup includes a **VPC, public subnets, EC2 instances, and Amazon S3** integ
 - Can be used as backend for Terraform state as well.
 
 📸 **Screenshot:**  
-![](./images/s3.png)
+![](s3.png)
 
 ---
 
