@@ -1,4 +1,4 @@
-# 🚀 Terraform AWS Project  
+# Terraform AWS Project  
 ## Setting up Infrastructure on AWS using Terraform  
 
 This project demonstrates how to provision AWS infrastructure using **Terraform**.  
@@ -6,102 +6,102 @@ The setup includes a **VPC, public subnets, EC2 instances, Load Balancer, Target
 
 ---
 
-## 🏗️ Architecture Diagram  
+# Architecture Diagram  
 
 ![Architecture](./AWS%20Terraform%20Infra.jpg)  
 
 ---
 
-## 🔹 Infrastructure Components  
+#  Infrastructure Components  
 
-### 🌐 VPC  
+#  VPC  
 - CIDR block: `10.0.0.0/16`  
 - Provides the networking foundation for all AWS resources.  
 
 📸 **Screenshot:**  
-![VPC](vpc.png)  
+![](vpc.png)  
 
 ---
 
-### 🌍 Public Subnets  
+# Public Subnets  
 - Used to host EC2 instances.  
 - Each subnet belongs to a different Availability Zone for **high availability**.  
 
 📸 **Screenshot:**  
-![Public Subnets](subnet.png)  
+![](subnet.png)  
 
 ---
 
-### 💻 EC2 Instances  
+# EC2 Instances  
 - Deployed in **multiple subnets** to ensure redundancy.  
 - Configured with **security groups** and **key pairs**.  
 
 📸 **Screenshot:**  
-![EC2 Instances](instance.png)  
+![](instance.png)  
 
 ---
 
-### 🌐 Internet Gateway  
+# Internet Gateway  
 - Provides internet access to resources inside the VPC.  
 - Route Table maps traffic from subnets to the Internet Gateway.  
 
 📸 **Screenshot:**  
-![Internet Gateway](gateway.png)  
+![](gateway.png)  
 
 ---
 
-### 🛣️ Route Table  
+# Route Table  
 - Defines how traffic is routed within the VPC.  
 
 📸 **Screenshot:**  
-![Route Table](route.png)  
+![](route.png)  
 
 ---
 
-### 🎯 Target Group  
+# Target Group  
 - Routes traffic to EC2 instances.  
 - Ensures proper load distribution across multiple instances.  
 
 📸 **Screenshot:**  
-![Target Group](Tgroup.png)  
+![](Tgroup.png)  
 
 ---
 
-### ⚖️ Load Balancer  
+# Load Balancer  
 - Distributes incoming traffic across EC2 instances.  
 - Provides **scalability and high availability**.  
 
 📸 **Screenshot:**  
-![Load Balancer](alb.png)  
+![](alb.png)  
 
 ---
 
-### 🪣 Amazon S3  
+#  Amazon S3  
 - Used for storing application data.  
 - Can also be configured as a backend for Terraform state.  
 
 📸 **Screenshot:**  
-![Amazon S3](s3.png)  
+![](s3.png)  
 
 ---
 
-## 📤 Terraform Outputs  
+## Terraform Outputs  
 
-### ✅ Load Balancer DNS  
+#  Load Balancer DNS  
 After applying Terraform, you’ll get the **Load Balancer DNS**.  
 
 📸 **Screenshot:**  
-![LB Output 1](alb1output.png)  
-![LB Output 2](alboutput2.png)  
+![](alb1output.png)  
+![](alboutput2.png)  
 
 ---
 
-### ✅ EC2 Instance Public IPs  
+# EC2 Instance Public IPs  
 Terraform also outputs the **public IPs** of the two instances.  
 
 📸 **Screenshots:**  
-![EC2 Instance 1](ec211.png)  
-![EC2 Instance 2](ec22.png)  
+![](ec211.png)  
+![](ec22.png)  
 
 ---
 
