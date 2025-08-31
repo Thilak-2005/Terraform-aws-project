@@ -1,63 +1,111 @@
-# Terraform-aws-project
-# Setting up Infrastructure on AWS using Terraform
+# 🚀 Terraform AWS Project  
+## Setting up Infrastructure on AWS using Terraform  
 
 This project demonstrates how to provision AWS infrastructure using **Terraform**.  
-The setup includes a **VPC, public subnets, EC2 instances, and Amazon S3** integration.
+The setup includes a **VPC, public subnets, EC2 instances, Load Balancer, Target Group, Internet Gateway, Route Table, and Amazon S3** integration.  
 
 ---
 
-## Architecture Diagram
+## 🏗️ Architecture Diagram  
 
-![](./AWS%20Terraform%20Infra.jpg)
+![Architecture](./AWS%20Terraform%20Infra.jpg)  
 
 ---
 
-##  Infrastructure Components
+## 🔹 Infrastructure Components  
 
-- **VPC**
-  - CIDR blocks: `172.16.0.0/16`
-  - Subnets: `172.16.0.0`, `172.16.1.0`, `172.16.2.0`
+### 🌐 VPC  
+- CIDR block: `10.0.0.0/16`  
+- Provides the networking foundation for all AWS resources.  
 
 📸 **Screenshot:**  
-![](vpc.png)
+![VPC](vpc.png)  
 
 ---
 
-### 2️⃣ Public Subnets
-- Used to host EC2 instances.
-- Each subnet belongs to a different Availability Zone for high availability.
+### 🌍 Public Subnets  
+- Used to host EC2 instances.  
+- Each subnet belongs to a different Availability Zone for **high availability**.  
 
 📸 **Screenshot:**  
-![](./images/public-subnets.png)
+![Public Subnets](subnet.png)  
 
 ---
 
-### 3️⃣ EC2 Instances
-- Deployed in **multiple subnets** to ensure redundancy.
-- Configured with security groups and key pairs.
+### 💻 EC2 Instances  
+- Deployed in **multiple subnets** to ensure redundancy.  
+- Configured with **security groups** and **key pairs**.  
 
 📸 **Screenshot:**  
-![](ec21.png)
+![EC2 Instances](instance.png)  
 
 ---
 
-### 4️⃣ Internet Gateway & Route Table
-- Internet Gateway provides internet access.
-- Route Table maps traffic from subnets to the Internet Gateway.
+### 🌐 Internet Gateway  
+- Provides internet access to resources inside the VPC.  
+- Route Table maps traffic from subnets to the Internet Gateway.  
 
 📸 **Screenshot:**  
-![](gateway.png)
+![Internet Gateway](gateway.png)  
 
 ---
 
-### 5️⃣ Amazon S3
-- Used for storing application data.
-- Can be used as backend for Terraform state as well.
+### 🛣️ Route Table  
+- Defines how traffic is routed within the VPC.  
 
 📸 **Screenshot:**  
-![](s3.png)
+![Route Table](route.png)  
 
 ---
+
+### 🎯 Target Group  
+- Routes traffic to EC2 instances.  
+- Ensures proper load distribution across multiple instances.  
+
+📸 **Screenshot:**  
+![Target Group](Tgroup.png)  
+
+---
+
+### ⚖️ Load Balancer  
+- Distributes incoming traffic across EC2 instances.  
+- Provides **scalability and high availability**.  
+
+📸 **Screenshot:**  
+![Load Balancer](alb.png)  
+
+---
+
+### 🪣 Amazon S3  
+- Used for storing application data.  
+- Can also be configured as a backend for Terraform state.  
+
+📸 **Screenshot:**  
+![Amazon S3](s3.png)  
+
+---
+
+## 📤 Terraform Outputs  
+
+### ✅ Load Balancer DNS  
+After applying Terraform, you’ll get the **Load Balancer DNS**.  
+
+📸 **Screenshot:**  
+![LB Output 1](alb1output.png)  
+![LB Output 2](alboutput2.png)  
+
+---
+
+### ✅ EC2 Instance Public IPs  
+Terraform also outputs the **public IPs** of the two instances.  
+
+📸 **Screenshots:**  
+![EC2 Instance 1](ec21.png)  
+![EC2 Instance 2](ec22.png)  
+
+---
+
+
 
 
 ## Deployment Steps
