@@ -100,7 +100,7 @@ After applying Terraform, you’ll get the **Load Balancer DNS**.
 Terraform also outputs the **public IPs** of the two instances.  
 
 📸 **Screenshots:**  
-![EC2 Instance 1](ec21.png)  
+![EC2 Instance 1](ec211.png)  
 ![EC2 Instance 2](ec22.png)  
 
 ---
